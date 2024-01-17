@@ -28,6 +28,8 @@ SECRET_KEY = 'django-insecure-2#icd2^ni(xqj(xo#8bjaxjdysdo!ep0sl6lk@ckg$6n%+#5oj
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
+CSRF_TRUSTED_ORIGINS = [
+    'https://hotelplaza.onrender.com', 'https://*.127.0.0.1']
 
 
 # Application definition
