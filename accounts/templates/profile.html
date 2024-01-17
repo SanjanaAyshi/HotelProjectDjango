@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Profile Page:</h1>
+
+{% if data %}
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Number</th>
+      <th scope="col">Booking Name</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for dt in data %}
+    <tr>
+      <th scope="row">{{ dt.id }}</th>
+      <td>{{ dt.book.title }}</td>
+      <td>{{ dt.buy }}</td>
+      <td>
+        <a class="btn btn-danger text-white" href="{% url 'cancel_book' dt.book.id %}">Cancel</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<h4>Sorry!! Nothing Booked...</h4>
+{% endif %}
+{% endblock %}
