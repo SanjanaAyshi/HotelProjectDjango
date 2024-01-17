@@ -89,4 +89,5 @@ class ReturnBookView(View):
             messages.success(request, "Booking canceled successfully.")
             return redirect('profile')
         else:
+            messages.success(request, "Booking canceled failed.")
             return redirect('home')
