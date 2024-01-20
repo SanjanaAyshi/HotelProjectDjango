@@ -54,7 +54,7 @@
 </div>
 
 
-<div class="container">
+<!-- <div class="container">
   <div class="d-flex flex-wrap p-4">
     <div class="col-12 p-3">
       <h4 class="pt-3">All Hotel:</h4>
@@ -75,5 +75,44 @@
     </div>
   </div>
 </div>
+</div> -->
+
+<div class="container">
+  <div class="p-4 pt-2">
+    <h4 class="pt-3">All Hotel:</h4>
+    <div class="row pt-4">
+      {% for post in data %}
+        <div class="col-md-12">
+          <div class="card mb-3">
+            <div class="row g-0">
+              <div class="col-md-3 p-0">
+                <img src="{{post.image.url}}" style="width: 100%;" class="card-img-top" alt="...">
+              </div>
+              <div class="col-md-9 pt-1">
+                <div class="card-body">
+                  <h5 class="card-header pt-1">
+                    <a href="{% url 'detail_post' post.id %}" class="text-decoration-none text-dark">{{post.title}}</a>
+                  </h5>
+                  <h5 class="card-title">Price: ${{post.price}}-Per night</h5>
+                  <p class="card-text">{{post.content | truncatewords:40}}</p>
+                  <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                  {% if request.user.is_authenticated %}
+                    <p>
+                      <a href="{% url 'Booked' post.id %}" class="btn btn-primary btn-lg">
+                          Book Now
+                      </a>
+                    </p>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
 </div>
+
+
+
 {% endblock %}
