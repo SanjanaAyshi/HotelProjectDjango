@@ -76,7 +76,7 @@
   </div>
 </div>
 </div> -->
-
+<!-- Ui row style added -->
 <div class="container">
   <div class="p-4 pt-2">
     <h4 class="pt-3">All Hotel:</h4>
@@ -98,7 +98,7 @@
                   <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
                   {% if request.user.is_authenticated %}
                     <p>
-                      <a href="{% url 'Booked' post.id %}" class="btn btn-primary btn-lg">
+                      <a href="{% url 'Booked' post.id %}" class="btn btn-primary">
                           Book Now
                       </a>
                     </p>
