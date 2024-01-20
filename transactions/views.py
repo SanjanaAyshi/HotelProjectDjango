@@ -18,12 +18,6 @@ def send_mail_to_user(user, subject, template, added_amount=None):
     # Calculate the total balance
     total_balance = user_account.balance
 
-    # If an added amount is provided, update the balance
-    # if added_amount is not None:
-    #     user_account.balance += added_amount
-    #     total_balance = user_account.balance
-    #     user_account.save()
-
     message = render_to_string(template, {
         'user': user,
         'amount': added_amount,  # Pass the added amount to the template
@@ -66,6 +60,8 @@ class BookingView(View):
             
             purchase.save()
             # return render(request, 'home.html', {'data': book})
+            send_mail_to_user(
+                request.user, "Booking Success", "bookedEmail.html")
             return redirect('home')
         else:
             messages.warning(

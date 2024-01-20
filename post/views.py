@@ -4,7 +4,6 @@ from . import forms
 from . import models
 # Create your views here.
 from django.utils.decorators import method_decorator
-
 from django.views.generic import DetailView
 
 
@@ -34,3 +33,4 @@ class DetailPostView(DetailView):
         context['comments'] = comments
         context['comment_form'] = comment_form
         return context
+ 
