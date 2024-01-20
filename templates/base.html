@@ -46,7 +46,9 @@
               <a class="nav-link btn btn-warning text-dark" href="{% url 'profile' %}">Profile</a>
             </li>
             <li class="nav-item mx-3">
-              <form action="{% url 'logout' %}" method="POST"><button type="submit">Logout</button></form>
+              <form action="{% url 'logout' %}" method="POST">
+                {% csrf_token %} 
+                <button type="submit">Logout</button></form>
               <!-- <a class="nav-link btn btn-danger text-dark" href="{% url 'logout' %}">Logout</a> -->
             </li>
             {% else %}
