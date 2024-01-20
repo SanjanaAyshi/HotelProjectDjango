@@ -13,6 +13,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,900&family=Roboto+Mono&family=Roboto+Serif:ital,opsz,wght@1,8..144,600&display=swap" rel="stylesheet">
   <link href="{% static 'style.css' %}" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;1,700&display=swap" rel="stylesheet">
+
   <title>HotelPlaza</title>
 </head>
 
@@ -27,14 +31,14 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active gap-2 fs-5 " aria-current="page" href="{% url 'home' %}">Home</a>
+            <a class="nav-link active gap-2 fs-6 " style="font-family: 'Roboto', sans-serif;" aria-current="page" href="{% url 'home' %}">Home</a>
           </li>
 
           <li class="nav-item mx-3">
-            <a class="nav-link active gap-2 fs-5" href="{% url 'aboutMe' %}">About Us</a>
+            <a class="nav-link active gap-2 fs-6" style="font-family: 'Roboto', sans-serif;" href="{% url 'aboutMe' %}">About Us</a>
           </li>
         </ul>
-        <div class="d-flex">
+        <div class="d-flex" style="font-family: 'Lato', sans-serif;">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             {% if request.user.is_authenticated %}
             <p class="fs-6 text-dark pt-2">
@@ -75,10 +79,10 @@
 
   {% block content %} {% endblock %}
   
-  <footer class="bg-dark text-white pt-5 pb-4 " style=" margin-top: auto;">
+  <footer class="bg-dark text-white pt-5 pb-4 " style=" margin-top: auto; font-family: 'Lato', sans-serif;">
     <div class="container text-center text-md-left">
       <div class="row text-center text-md-left ">
-        <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+        <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3" >
           <h5 class="text-uppercase mb-4 font-weight-bold text-white">HotelPlaza</h5>
           <p>Elevate your travel journey with our hotel booking platform, offering a curated selection of handpicked accommodations, ensuring memorable stays tailored to your unique preferences.</p>
         </div>

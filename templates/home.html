@@ -91,10 +91,10 @@
               <div class="col-md-9 pt-1">
                 <div class="card-body">
                   <h5 class="card-header pt-1">
-                    <a href="{% url 'detail_post' post.id %}" class="text-decoration-none text-dark">{{post.title}}</a>
+                    <a href="{% url 'detail_post' post.id %}" class="text-decoration-none text-dark" style="font-weight: bold;">{{post.title}}</a>
                   </h5>
-                  <h5 class="card-title">Price: ${{post.price}}-Per night</h5>
-                  <p class="card-text">{{post.content | truncatewords:40}}</p>
+                  <h5 class="card-title" style="font-family: 'Lato', sans-serif;">Price: ${{post.price}}-Per night</h5>
+                  <p class="card-text" style="font-family: 'Lato', sans-serif;">{{post.content | truncatewords:40}}</p>
                   <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
                   {% if request.user.is_authenticated %}
                     <p>
