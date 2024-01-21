@@ -1,0 +1,290 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<!-- <div
+  class="swiffy-slider slider-item-ratio slider-nav-animation slider-nav-animation-fadein slider-item-first-visible"
+  id="swiffy-animation"
+  style="max-height: 100%; max-width: 100%; object-fit: cover"
+>
+  <ul class="slider-container" id="container1">
+    <li id="slide1" class="slide-visible">
+      <img
+        src="{% static 'pexels-bilal-furkan-koşar-19657344.jpg' %}"
+        alt="..."
+        loading="lazy"
+      />
+      <div
+        class="card-img-overlay d-flex align-items-start align-items-md-center justify-content-center flex-column"
+      >
+        <h2 class="card-title h1 d-block d-md-inline-block text-white">
+          The Aston Martin DB5
+        </h2>
+        <p class="card-text lead col-md-8 col-lg-6 text-white">
+          The Aston Martin DB5 is a British luxury grand tourer (GT) that was
+          made by Aston Martin and designed by the Italian coachbuilder
+          Carrozzeria Touring Superleggera.
+        </p>
+      </div>
+    </li>
+    <li id="slide2" class="">
+      <img
+        src="{% static 'pexels-asad-photo-maldives-3155726.jpg' %}"
+        alt="..."
+        loading="lazy"
+      />
+      <div
+        class="card-img-overlay d-flex align-items-start align-items-md-center justify-content-center flex-column"
+      >
+        <h2 class="card-title h1 d-block d-md-inline-block">
+          The Aston Martin DB5
+        </h2>
+        <p class="card-text lead col-md-8 col-lg-6">
+          The Aston Martin DB5 is a British luxury grand tourer (GT) that was
+          made by Aston Martin and designed by the Italian coachbuilder
+          Carrozzeria Touring Superleggera.
+        </p>
+      </div>
+    </li>
+    <li id="slide3" class="">
+      <img
+        src="{% static 'pexels-kishan-rahul-jose-13639902.jpg' %}"
+        alt="..."
+        loading="lazy"
+      />
+      <div
+        class="card-img-overlay d-flex align-items-start align-items-md-center justify-content-center flex-column"
+      >
+        <h2 class="card-title h1 d-block d-md-inline-block text-white">
+          The Aston Martin DB5
+        </h2>
+        <p class="card-text lead col-md-8 col-lg-6 text-white">
+          The Aston Martin DB5 is a British luxury grand tourer (GT) that was
+          made by Aston Martin and designed by the Italian coachbuilder
+          Carrozzeria Touring Superleggera.
+        </p>
+      </div>
+    </li>
+    <li id="slide4" class="">
+      <img
+        src="{% static 'pexels-cottonbro-studio-6474588.jpg' %}"
+        alt="..."
+        loading="lazy"
+      />
+      <div
+        class="card-img-overlay d-flex align-items-start align-items-md-center justify-content-center flex-column"
+      >
+        <h2 class="card-title h1 d-block d-md-inline-block text-white">
+          The Aston Martin DB5
+        </h2>
+        <p class="card-text lead col-md-8 col-lg-6 text-white">
+          The Aston Martin DB5 is a British luxury grand tourer (GT) that was
+          made by Aston Martin and designed by the Italian coachbuilder
+          Carrozzeria Touring Superleggera.
+        </p>
+      </div>
+    </li>
+    <li id="slide5" class="">
+      <img
+        src="{% static 'pexels-cottonbro-studio-6474586.jpg' %}"
+        alt="..."
+        loading="lazy"
+      />
+      <div
+        class="card-img-overlay d-flex align-items-start align-items-md-center justify-content-center flex-column"
+      >
+        <h2 class="card-title h1 d-block d-md-inline-block text-white">
+          The Aston Martin DB5
+        </h2>
+        <p class="card-text lead col-md-8 col-lg-6 text-white">
+          The Aston Martin DB5 is a British luxury grand tourer (GT) that was
+          made by Aston Martin and designed by the Italian coachbuilder
+          Carrozzeria Touring Superleggera.
+        </p>
+      </div>
+    </li>
+    <li id="slide6" class="">
+      <img
+        src="{% static 'pexels-tomas-anunziata-695193.jpg' %}"
+        alt="..."
+        loading="lazy"
+      />
+      <div
+        class="card-img-overlay d-flex align-items-start align-items-md-center justify-content-center flex-column"
+      >
+        <h2 class="card-title h1 d-block d-md-inline-block text-white">
+          The Aston Martin DB5
+        </h2>
+        <p class="card-text lead col-md-8 col-lg-6 text-white">
+          The Aston Martin DB5 is a British luxury grand tourer (GT) that was
+          made by Aston Martin and designed by the Italian coachbuilder
+          Carrozzeria Touring Superleggera.
+        </p>
+      </div>
+    </li>
+  </ul>
+
+  <button type="button" class="slider-nav" aria-label="Go to previous"></button>
+  <button
+    type="button"
+    class="slider-nav slider-nav-next"
+    aria-label="Go to next"
+  ></button>
+
+  <div class="slider-indicators">
+    <button aria-label="Go to slide" class=""></button>
+    <button aria-label="Go to slide" class=""></button>
+    <button aria-label="Go to slide" class=""></button>
+    <button aria-label="Go to slide" class=""></button>
+    <button aria-label="Go to slide" class=""></button>
+    <button aria-label="Go to slide" class="active"></button>
+  </div>
+</div> -->
+<!-- Carousal -->
+<div class="d-flex flex-wrap px-5 pt-3 align-items-center">
+  <div
+    id="carouselExampleCaptions"
+    class="carousel slide"
+    data-bs-ride="carousel"
+  >
+    <div class="carousel-indicators">
+      <button
+        type="button"
+        data-bs-target="#carouselExampleCaptions"
+        data-bs-slide-to="0"
+        class="active"
+        aria-current="true"
+        aria-label="Slide 1"
+      ></button>
+      <button
+        type="button"
+        data-bs-target="#carouselExampleCaptions"
+        data-bs-slide-to="1"
+        aria-label="Slide 2"
+      ></button>
+      <button
+        type="button"
+        data-bs-target="#carouselExampleCaptions"
+        data-bs-slide-to="2"
+        aria-label="Slide 3"
+      ></button>
+    </div>
+    <div class="carousel-inner">
+      <div
+        class="carousel-item active"
+        style="height: 90vh; min-height: 250px; background-size: cover"
+      >
+        <img
+          src="{% static 'pexels-bilal-furkan-koşar-19657344.jpg' %}"
+          class="d-block w-100"
+          alt="..."
+        />
+        <div
+          class="carousel-caption d-none d-md-block"
+          style="
+            font-size: 2em;
+            font-weight: bold;
+            color: #fdfdfd;
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+          "
+        >
+          <h5>Experience Peace like never before</h5>
+          <p>
+            Indulge in the opulence of our world-class accommodations and
+            personalized services.
+          </p>
+        </div>
+      </div>
+      <div
+        class="carousel-item"
+        style="height: 90vh; min-height: 400px; background-size: cover"
+      >
+        <img
+          src="{% static 'pexels-tomas-anunziata-695193.jpg' %}"
+          class="d-block w-100"
+          style="margin-top: -200px"
+          alt="..."
+        />
+        <div
+          class="carousel-caption d-none d-md-block"
+          style="
+            font-size: 2em;
+            font-weight: bold;
+            color: #fdfdfd;
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+          "
+        >
+          <h5>Create Unforgettable Memories</h5>
+          <p>
+            Make your stay memorable with our exceptional hospitality and
+            remarkable experiences.
+          </p>
+        </div>
+      </div>
+      <div
+        class="carousel-item"
+        style="height: 90vh; min-height: 350px; background-size: cover"
+      >
+        <img
+          src="{% static 'pexels-cottonbro-studio-6474588.jpg' %}"
+          class="d-block w-100"
+          alt="..."
+        />
+        <div
+          class="carousel-caption d-none d-md-block"
+          style="
+            font-size: 2em;
+            font-weight: bold;
+            color: #fdfdfd;
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+          "
+        >
+          <h5>Discover Tranquility Amidst Nature</h5>
+          <p>
+            Immerse yourself in the serene beauty of our surroundings, where
+            every moment is a retreat.
+          </p>
+        </div>
+      </div>
+    </div>
+    <button
+      class="carousel-control-prev"
+      type="button"
+      data-bs-target="#carouselExampleCaptions"
+      data-bs-slide="prev"
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button
+      class="carousel-control-next"
+      type="button"
+      data-bs-target="#carouselExampleCaptions"
+      data-bs-slide="next"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
+
+<div class="d-flex container pt-lg-5 p-3">
+  <div class="col-md-5">
+    <img
+      src="{% static 'confident1-1372036341-612x612.jpg' %}"
+      class="w-100 rounded-3"
+    />
+  </div>
+  <div class="col-md-1"></div>
+  <div class="col-md-6 mt-4">
+    <h2>Our Joy</h2>
+    <p>
+      Discover a seamless hotel booking experience with our platform, ensuring
+      successful reservations that cater to your unique preferences.
+      Prioritizing customer satisfaction, we guarantee a stay that exceeds
+      expectations, providing confidence in every deal. Book with us for a
+      delightful blend of convenience, reliability, and satisfaction, making
+      your travel journey truly memorable.
+    </p>
+  </div>
+</div>
+
+{% endblock %}

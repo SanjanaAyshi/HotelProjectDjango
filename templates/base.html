@@ -1,128 +1,228 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
-  <!-- Font link -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,900&family=Roboto+Mono&family=Roboto+Serif:ital,opsz,wght@1,8..144,600&display=swap" rel="stylesheet">
-  <link href="{% static 'style.css' %}" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;1,700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
-  <title>HotelPlaza</title>
-</head>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/css/swiffy-slider.min.css"
+      rel="stylesheet"
+      crossorigin="anonymous"
+    />
+    <!-- Font link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,900&family=Roboto+Mono&family=Roboto+Serif:ital,opsz,wght@1,8..144,600&display=swap"
+      rel="stylesheet"
+    />
+    <link href="{% static 'style.css' %}" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap"
+      rel="stylesheet"
+    />
+    <title>HotelPlaza</title>
+  </head>
 
-<body  style="background-color : #ffffff">
-  <nav class=" container-fluid navbar navbar-expand-lg" style="background-color: rgb(234, 245, 246);">
-    <div class="container-fluid">
-      <a class="navbar-brand fs-4" style="color: rgb(222, 48, 21); font-weight: 500; font-family: 'Playfair Display',sans-serif;">HotelPlaza</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active gap-2 fs-6 " style="font-family: 'Roboto', sans-serif;" aria-current="page" href="{% url 'home' %}">Home</a>
-          </li>
-
-          <li class="nav-item mx-3">
-            <a class="nav-link active gap-2 fs-6" style="font-family: 'Roboto', sans-serif;" href="{% url 'aboutMe' %}">About Us</a>
-          </li>
-        </ul>
-        <div class="d-flex" style="font-family: 'Lato', sans-serif;">
+  <body style="background-color: #ffffff">
+    <nav
+      class="container-fluid navbar navbar-expand-lg"
+      style="background-color: rgb(234, 245, 246)"
+    >
+      <div class="container-fluid">
+        <a
+          class="navbar-brand fs-4"
+          style="
+            color: rgb(222, 48, 21);
+            font-weight: 500;
+            font-family: 'Playfair Display', sans-serif;
+          "
+          >HotelPlaza</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            {% if request.user.is_authenticated %}
-            <p class="fs-6 text-dark pt-2">
-              {{request.user.first_name}}:(balance:{{request.user.account.balance}})
-            </p>
-            <li class="nav-item mx-3">
-              <a class="btn btn-success" href="{% url 'addMoney' %}">Add Money</a>
-            </li>
-            <li class="nav-item mx-3">
-              <a class="nav-link btn btn-warning text-dark" href="{% url 'profile' %}">Profile</a>
-            </li>
-            <li class="nav-item mx-3">
-              <form action="{% url 'logout' %}" method="POST" >
-                {% csrf_token %} 
-                <button type="submit" class="btn btn-danger">Logout</button></form>
-              <!-- <a class="nav-link btn btn-danger text-dark" href="{% url 'logout' %}">Logout</a> -->
-            </li>
-            {% else %}
-            <li class="nav-item mx-3">
-              <a class="nav-link btn btn-dark text-white" href="{% url 'register' %}">Register</a>
-            </li>
             <li class="nav-item">
-              <a class="nav-link btn btn-primary text-white" href="{% url 'login' %}">Login</a>
+              <a
+                class="nav-link active gap-2 fs-6"
+                style="font-family: 'Roboto', sans-serif"
+                aria-current="page"
+                href="{% url 'home' %}"
+                >Home</a
+              >
             </li>
-            {% endif %}
+
+            <li class="nav-item mx-3">
+              <a
+                class="nav-link active fs-6"
+                style="font-family: 'Roboto', sans-serif"
+                href="{% url 'gallery' %}"
+                >Gallery</a
+              >
+            </li>
+            <li class="nav-item mx-3">
+              <a
+                class="nav-link active gap-lg-1 fs-6"
+                style="font-family: 'Roboto', sans-serif"
+                href="{% url 'aboutMe' %}"
+                >About Us</a
+              >
+            </li>
           </ul>
-        </div>
-      </div>
-    </div>
-  </nav>
-
-  {% for i in messages %}
-  <div class="">
-    <h3 class="text-{{i.tags}}">{{i}}</h3>
-  </div>
-
-  {% endfor %}
-
-  {% block content %} {% endblock %}
-  
-  <footer class="bg-dark text-white pt-5 pb-4 " style=" margin-top: auto; font-family: 'Lato', sans-serif;">
-    <div class="container text-center text-md-left">
-      <div class="row text-center text-md-left ">
-        <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3" >
-          <h5 class="text-uppercase mb-4 font-weight-bold text-white">HotelPlaza</h5>
-          <p>Elevate your travel journey with our hotel booking platform, offering a curated selection of handpicked accommodations, ensuring memorable stays tailored to your unique preferences.</p>
-        </div>
-        <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-          <h5 class="text-uppercase mb-4 font-weight-bold text-white">contact Us</h5>
-          <p>
-            <a href="#" class="text-white" style="text-decoration: none;">sanjana.ayshi92@gmail.com</a>
-          </p>
-          <p>
-            <a href="#" class="text-white" style="text-decoration: none;">+88015750448033</a>
-          </p>
-        </div>
-        <div class="col-md-5 col-lg-4">
-          <div class="text-center text-md-right">
-            <h5 class="text-uppercase mb-4 font-weight-bold text-white">Link</h5>
-            <ul class="list-unstyled list-inline">
-              <li class="list-inline-item">
-                  <a href="https://github.com/SanjanaAyshi" class="btn-floating btn-sm text-white" style="font-size: 23px;">
-                      <i class="fab fa-github"></i> GitHub
-                  </a>
+          <div class="d-flex" style="font-family: 'Lato', sans-serif">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              {% if request.user.is_authenticated %}
+              <p class="fs-6 text-dark pt-2">
+                {{request.user.first_name}}:(balance:{{request.user.account.balance}})
+              </p>
+              <li class="nav-item mx-3">
+                <a class="btn btn-success" href="{% url 'addMoney' %}"
+                  >Add Money</a
+                >
               </li>
-          </ul>
-            <ul class="map-area">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.9492353971145!2d90.3610485315939!3d23.7848219869879!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c0b7cae91c1b%3A0x938b002a16b67d93!2sAmtola%20Bazaar!5e0!3m2!1sen!2sbd!4v1705830669580!5m2!1sen!2sbd" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              <li class="nav-item mx-3">
+                <a
+                  class="nav-link btn btn-warning text-dark"
+                  href="{% url 'profile' %}"
+                  >Profile</a
+                >
+              </li>
+              <li class="nav-item mx-3">
+                <form action="{% url 'logout' %}" method="POST">
+                  {% csrf_token %}
+                  <button type="submit" class="btn btn-danger">Logout</button>
+                </form>
+                <!-- <a class="nav-link btn btn-danger text-dark" href="{% url 'logout' %}">Logout</a> -->
+              </li>
+              {% else %}
+              <li class="nav-item mx-3">
+                <a
+                  class="nav-link btn btn-dark text-white"
+                  href="{% url 'register' %}"
+                  >Register</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link btn btn-primary text-white"
+                  href="{% url 'login' %}"
+                  >Login</a
+                >
+              </li>
+              {% endif %}
             </ul>
           </div>
         </div>
       </div>
+    </nav>
+
+    {% for i in messages %}
+    <div class="">
+      <h3 class="text-{{i.tags}}">{{i}}</h3>
     </div>
-  </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-    crossorigin="anonymous"></script>
+    {% endfor %} {% block content %} {% endblock %}
 
-  <!-- Option 2: Separate Popper and Bootstrap JS -->
-  <!--
+    <footer
+      class="bg-dark text-white pt-5 pb-4"
+      style="margin-top: auto; font-family: 'Lato', sans-serif"
+    >
+      <div class="container text-center text-md-left">
+        <div class="row text-center text-md-left">
+          <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+            <h5 class="text-uppercase mb-4 font-weight-bold text-white">
+              HotelPlaza
+            </h5>
+            <p>
+              Elevate your travel journey with our hotel booking platform,
+              offering a curated selection of handpicked accommodations,
+              ensuring memorable stays tailored to your unique preferences.
+            </p>
+          </div>
+          <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+            <h5 class="text-uppercase mb-4 font-weight-bold text-white">
+              contact Us
+            </h5>
+            <p>
+              <a href="#" class="text-white" style="text-decoration: none"
+                >sanjana.ayshi92@gmail.com</a
+              >
+            </p>
+            <p>
+              <a href="#" class="text-white" style="text-decoration: none"
+                >+88015750448033</a
+              >
+            </p>
+          </div>
+          <div class="col-md-5 col-lg-4">
+            <div class="text-center text-md-right">
+              <h5 class="text-uppercase mb-4 font-weight-bold text-white">
+                Link
+              </h5>
+              <ul class="list-unstyled list-inline">
+                <li class="list-inline-item">
+                  <a
+                    href="https://github.com/SanjanaAyshi"
+                    class="btn-floating btn-sm text-white"
+                    style="font-size: 23px"
+                  >
+                    <i class="fab fa-github"></i> GitHub
+                  </a>
+                </li>
+              </ul>
+              <ul class="map-area">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.9492353971145!2d90.3610485315939!3d23.7848219869879!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c0b7cae91c1b%3A0x938b002a16b67d93!2sAmtola%20Bazaar!5e0!3m2!1sen!2sbd!4v1705830669580!5m2!1sen!2sbd"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/js/swiffy-slider.min.js"
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     -->
-</body>
-
+  </body>
 </html>

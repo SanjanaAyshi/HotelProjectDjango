@@ -1,123 +1,159 @@
-{% extends 'base.html' %}
-{% load static %}
-{% block content %}
-
+{% extends 'base.html' %} {% load static %} {% block content %}
 
 <div class="d-flex flex-wrap px-5 pt-3 align-items-center">
-  <div id="carouselExampleCaptions" class="carousel slide"  data-bs-ride="carousel">
+  <div
+    id="carouselExampleCaptions"
+    class="carousel slide"
+    data-bs-ride="carousel"
+  >
     <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <button
+        type="button"
+        data-bs-target="#carouselExampleCaptions"
+        data-bs-slide-to="0"
+        class="active"
+        aria-current="true"
+        aria-label="Slide 1"
+      ></button>
+      <button
+        type="button"
+        data-bs-target="#carouselExampleCaptions"
+        data-bs-slide-to="1"
+        aria-label="Slide 2"
+      ></button>
+      <button
+        type="button"
+        data-bs-target="#carouselExampleCaptions"
+        data-bs-slide-to="2"
+        aria-label="Slide 3"
+      ></button>
     </div>
     <div class="carousel-inner">
-      <div class="carousel-item active" style="height: 90vh; min-height: 250px; background-size: cover;">
-        <img src="{% static 'the-anam-_twiIcIsp2s-unsplash.jpg' %}" class="d-block w-100"   alt="...">
-        <div class="carousel-caption d-none d-md-block" style="font-size: 2em;
-        font-weight: bold;
-        color: #fdfdfd; 
-        text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);">
-        <h5>Experience Luxury Like Never Before</h5>
-        <p>Indulge in the opulence of our world-class accommodations and personalized services.</p>
+      <div
+        class="carousel-item active"
+        style="height: 90vh; min-height: 250px; background-size: cover"
+      >
+        <img
+          src="{% static 'the-anam-_twiIcIsp2s-unsplash.jpg' %}"
+          class="d-block w-100"
+          alt="..."
+        />
+        <div
+          class="carousel-caption d-none d-md-block"
+          style="
+            font-size: 2em;
+            font-weight: bold;
+            color: #fdfdfd;
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+          "
+        >
+          <h5>Experience Luxury Like Never Before</h5>
+          <p>
+            Indulge in the opulence of our world-class accommodations and
+            personalized services.
+          </p>
         </div>
       </div>
-      <div class="carousel-item" style="height: 90vh;min-height: 400px; background-size: cover;">
-        <img src="{% static 'ciudad-maderas-MXbM1NrRqtI-unsplash.jpg' %}" class="  d-block w-100" alt="...">
-        <div class="carousel-caption d-none d-md-block"style="font-size: 2em;
-        font-weight: bold;
-        color: #fdfdfd; 
-        text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);">
+      <div
+        class="carousel-item"
+        style="height: 90vh; min-height: 400px; background-size: cover"
+      >
+        <img
+          src="{% static 'ciudad-maderas-MXbM1NrRqtI-unsplash.jpg' %}"
+          class="d-block w-100"
+          alt="..."
+        />
+        <div
+          class="carousel-caption d-none d-md-block"
+          style="
+            font-size: 2em;
+            font-weight: bold;
+            color: #fdfdfd;
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+          "
+        >
           <h5>Create Unforgettable Memories</h5>
-         <p>Make your stay memorable with our exceptional hospitality and remarkable experiences.</p>
+          <p>
+            Make your stay memorable with our exceptional hospitality and
+            remarkable experiences.
+          </p>
         </div>
       </div>
-      <div class="carousel-item" style="height: 90vh;min-height: 350px; background-size: cover;">
-        <img src="{% static 'visualsofdana-T5pL6ciEn-I-unsplash.jpg' %}" class="d-block w-100" alt="...">
-        <div class="carousel-caption d-none d-md-block"style="font-size: 2em;
-        font-weight: bold;
-        color: #fdfdfd; 
-        text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);">
-        <h5>Discover Tranquility Amidst Nature</h5>
-        <p>Immerse yourself in the serene beauty of our surroundings, where every moment is a retreat.</p>
+      <div
+        class="carousel-item"
+        style="height: 90vh; min-height: 350px; background-size: cover"
+      >
+        <img
+          src="{% static 'visualsofdana-T5pL6ciEn-I-unsplash.jpg' %}"
+          class="d-block w-100"
+          alt="..."
+        />
+        <div
+          class="carousel-caption d-none d-md-block"
+          style="
+            font-size: 2em;
+            font-weight: bold;
+            color: #fdfdfd;
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+          "
+        >
+          <h5>Discover Tranquility Amidst Nature</h5>
+          <p>
+            Immerse yourself in the serene beauty of our surroundings, where
+            every moment is a retreat.
+          </p>
         </div>
       </div>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <button
+      class="carousel-control-prev"
+      type="button"
+      data-bs-target="#carouselExampleCaptions"
+      data-bs-slide="prev"
+    >
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Previous</span>
     </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <button
+      class="carousel-control-next"
+      type="button"
+      data-bs-target="#carouselExampleCaptions"
+      data-bs-slide="next"
+    >
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Next</span>
     </button>
   </div>
 </div>
 
-
-<!-- <div class="container">
-  <div class="d-flex flex-wrap p-4">
-    <div class="col-12 p-3">
-      <h4 class="pt-3">All Hotel:</h4>
-      <div class="d-flex flex-wrap pt-5">
-      {% for post in data %}
-      <div class="col-sm-4">
-        <div class="card m-2">
-          <div class="card-body">
-            <img src="{{post.image.url}}" style="width: 85%;" class="card-img-top" alt="...">
-            <h5 class="card-title"><a href="{% url 'detail_post' post.id %}"
-                class="text-decoration-none text-dark">{{post.title}}</a></h5>
-            <h5 class="card-title">Price: ${{post.price}} Per night</h5>
-            <p class="card-text">{{post.content |truncatewords:10}}</p>
-          </div>
-        </div>
-      </div>
-      {% endfor %}
-    </div>
-  </div>
-</div>
-</div> -->
-
-<!-- adding category -->
-<!-- <div class="container">
-  {% for cat in category %}
-    <div class="card" style="width: 18rem;">
-      <img src="{{cat.image.url}}" class="card-img-top" alt="...">
-        <div class="form-check d-flex">
-        <label class="form-check-label" for="{{cat.id}}">
-          <a
-          href="{% url 'categoryWisePost' cat.slug %}"
-          class="text-decoration-none text-white"
-          >{{cat.name}}</a
-          >
-        </label>
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-    </div>
-  {% endfor %}
-</div> -->
-
-
 <div class="container">
   <div class="row pt-lg-3 p-3">
-    <h3 style="font-family: 'Lato', sans-serif; font-weight: bold;">Trending destinations</h3>
-    <p style="font-family: Arial, Helvetica, sans-serif;">Most popular choices for travelers from your location.</p>
+    <h3 style="font-family: 'Lato', sans-serif; font-weight: bold">
+      Trending destinations
+    </h3>
+    <p style="font-family: Arial, Helvetica, sans-serif">
+      Most popular choices for travelers from your location.
+    </p>
     {% for cat in category %}
-      <div class="col-md-4 p-2">
-        <div class="card h-75">
-          <div class="card-body rounded-3" style="height: 25rem; background-image: url('{{ cat.image.url }}'); background-size: cover;">
-            <h5 class="card-title text-white">{{ cat.name }}</h5>
-            <!-- You can add more information here if needed -->
-            <a href="{% url 'categoryWisePost' cat.slug %}" class="btn btn-primary bg-transparent text-white">Explore {{ cat.name }}</a>
-          </div>
+    <div class="col-md-4 p-2">
+      <div class="card h-75">
+        <div
+          class="card-body rounded-3"
+          style="height: 25rem; background-image: url('{{ cat.image.url }}'); background-size: cover;"
+        >
+          <h5 class="card-title text-white">{{ cat.name }}</h5>
+          <!-- You can add more information here if needed -->
+          <a
+            href="{% url 'categoryWisePost' cat.slug %}"
+            class="btn btn-primary bg-transparent text-white"
+            >Explore {{ cat.name }}</a
+          >
         </div>
       </div>
+    </div>
     {% endfor %}
   </div>
 </div>
-
 
 <!-- Ui row style added -->
 <div class="container">
@@ -125,37 +161,257 @@
     <h4 class="pt-0">All Hotel:</h4>
     <div class="row pt-2">
       {% for post in data %}
-        <div class="col-md-12">
-          <div class="card mb-3">
-            <div class="row g-0">
-              <div class="col-md-3">
-                <img src="{{post.image.url}}" style="width: 100%;" class="card-img-top" alt="...">
-              </div>
-              <div class="col-md-9">
-                <div class="card-body">
-                  <h5 class="card-header">
-                    <a href="{% url 'detail_post' post.id %}" class="text-decoration-none text-dark" style="font-weight: bold;">{{post.title}}</a>
-                  </h5>
-                  <h5 class="card-title" style="font-family: 'Lato', sans-serif;">Price: ${{post.price}}-Per night</h5>
-                  <p class="card-text" style="font-family: 'Lato', sans-serif;">{{post.content | truncatewords:40}}</p>
-                  <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-                  {% if request.user.is_authenticated %}
-                    <p>
-                      <a href="{% url 'Booked' post.id %}" class="btn btn-primary">
-                          Book Now
-                      </a>
-                    </p>
-                  {% endif %}
-                </div>
+      <div class="col-md-12">
+        <div class="card mb-3">
+          <div class="row g-0">
+            <div class="col-md-3">
+              <img
+                src="{{post.image.url}}"
+                style="width: 100%"
+                class="card-img-top"
+                alt="..."
+              />
+            </div>
+            <div class="col-md-9">
+              <div class="card-body">
+                <h5 class="card-header">
+                  <a
+                    href="{% url 'detail_post' post.id %}"
+                    class="text-decoration-none text-dark"
+                    style="font-weight: bold"
+                    >{{post.title}}</a
+                  >
+                </h5>
+                <h5 class="card-title" style="font-family: 'Lato', sans-serif">
+                  Price: ${{post.price}}-Per night
+                </h5>
+                <p class="card-text" style="font-family: 'Lato', sans-serif">
+                  {{post.content | truncatewords:40}}
+                </p>
+                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                {% if request.user.is_authenticated %}
+                <p>
+                  <a href="{% url 'Booked' post.id %}" class="btn btn-primary">
+                    Book Now
+                  </a>
+                </p>
+                {% endif %}
               </div>
             </div>
           </div>
         </div>
+      </div>
       {% endfor %}
     </div>
   </div>
 </div>
+<!-- Slider -->
+<div class="container pt-lg-2 p-1 py-lg-5 py-md-1">
+  <h3 style="font-family: 'Lato', sans-serif; font-weight: bold">
+    Trending Partners
+  </h3>
+  <p style="font-family: Arial, Helvetica, sans-serif">
+    Get the Most Attractive Discounts by
+  </p>
+  <div
+    class="swiffy-slider slider-item-show4 slider-nav-outside slider-nav-dark slider-nav-sm slider-nav-visible slider-nav-page slider-item-snapstart slider-nav-autoplay slider-nav-autopause slider-item-ratio slider-item-ratio-contain slider-item-ratio-32x9 bg-white shadow-lg py-3 py-lg-4"
+    data-slider-nav-autoplay-interval="2000"
+  >
+    <div class="slider-container">
+      <div><img src="{% static 'ubar.jpg' %}" alt="..." /></div>
+      <div>
+        <img src="{% static 'Pathao.png' %}" loading="lazy" alt="..." />
+      </div>
+      <div>
+        <img
+          src="{% static 'Emirates_logo.svg.png' %}"
+          loading="lazy"
+          alt="..."
+        />
+      </div>
+      <div>
+        <img
+          src="{% static 'biman-bangladesh-airlines.jpg' %}"
+          loading="lazy"
+          alt="..."
+        />
+      </div>
+      <div><img src="{% static 'ubar.jpg' %}" alt="..." /></div>
+      <div>
+        <img src="{% static 'Pathao.png' %}" loading="lazy" alt="..." />
+      </div>
+      <div>
+        <img
+          src="{% static 'Emirates_logo.svg.png' %}"
+          loading="lazy"
+          alt="..."
+        />
+      </div>
+      <div>
+        <img
+          src="{% static 'biman-bangladesh-airlines.jpg' %}"
+          loading="lazy"
+          alt="..."
+        />
+      </div>
+      <div><img src="{% static 'ubar.jpg' %}" alt="..." /></div>
+      <div>
+        <img src="{% static 'Pathao.png' %}" loading="lazy" alt="..." />
+      </div>
+      <div>
+        <img
+          src="{% static 'Emirates_logo.svg.png' %}"
+          loading="lazy"
+          alt="..."
+        />
+      </div>
+      <div>
+        <img
+          src="{% static 'biman-bangladesh-airlines.jpg' %}"
+          loading="lazy"
+          alt="..."
+        />
+      </div>
+      <div><img src="{% static 'ubar.jpg' %}" alt="..." /></div>
+      <div>
+        <img src="{% static 'Pathao.png' %}" loading="lazy" alt="..." />
+      </div>
+      <div>
+        <img
+          src="{% static 'Emirates_logo.svg.png' %}"
+          loading="lazy"
+          alt="..."
+        />
+      </div>
+      <div>
+        <img
+          src="{% static 'biman-bangladesh-airlines.jpg' %}"
+          loading="lazy"
+          alt="..."
+        />
+      </div>
+    </div>
 
+    <button type="button" class="slider-nav" aria-label="Go left"></button>
+    <button
+      type="button"
+      class="slider-nav slider-nav-next"
+      aria-label="Go left"
+    ></button>
+  </div>
+</div>
 
+<!-- few cards -->
+<div class="container py-4">
+  <h3 style="font-family: 'Lato', sans-serif; font-weight: bold">
+    Few Pictures of villas
+  </h3>
+  <p style="font-family: Arial, Helvetica, sans-serif">
+    Most popular choices for travelers from your location.
+  </p>
+  <div class="row">
+    <div class="col-md-7 p-2">
+      <div class="card w-100">
+        <div
+          class="card-body rounded-3"
+          style="
+            height: 10rem;
+            background-image: url('{% static 'salman-preeom-mO1_udD5iCs-unsplash.jpg' %}');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: flex-end;
+          "
+        >
+          <h5 class="card-title text-white">A city of light</h5>
+        </div>
+      </div>
+      <div class="card w-100">
+        <div
+          class="card-body rounded-3"
+          style="
+            height: 10rem;
+            background-image: url('{% static 'pexels-cottonbro-studio-5111497.jpg' %}');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: flex-end;
+          "
+        >
+          <h5 class="card-title text-white">A city of wet and river</h5>
+        </div>
+      </div>
+    </div>
 
+    <div class="col-md-5 p-2">
+      <div class="card h-100">
+        <div
+          class="card-body rounded-3"
+          style="
+            height: 20rem;
+            background-image: url('{% static 'the-anam-yz9a3Nr059I-unsplash.jpg' %}');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: flex-end;
+          "
+        >
+          <h5 class="card-title text-white mb-3 ms-3">A sweet night</h5>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-5 p-2">
+      <!-- sunny -->
+      <div class="card h-100">
+        <div
+          class="card-body rounded-3"
+          style="
+            height: 20rem;
+            background-image: url('{% static 'pexels-adrien-olichon-4237154.jpg' %}');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: flex-end;
+          "
+        >
+          <h5 class="card-title text-white mb-3 ms-3">A city of sunny</h5>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-7 p-2">
+      <div class="card w-100">
+        <!-- snow -->
+        <div
+          class="card-body rounded-3"
+          style="
+            height: 10rem;
+            background-image: url('{% static 'pexels-felix-mittermeier-957002.jpg' %}');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: flex-end;
+          "
+        >
+          <h5 class="card-title text-white">A city of snow</h5>
+        </div>
+      </div>
+      <div class="card w-100">
+        <!-- rain -->
+        <div
+          class="card-body rounded-3"
+          style="
+            height: 10rem;
+            background-image: url('{% static 'pexels-yan-krukau-5479837.jpg' %}');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: flex-end;
+          "
+        >
+          <h5 class="card-title text-white">A city of rain</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}

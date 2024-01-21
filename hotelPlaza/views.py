@@ -13,3 +13,6 @@ def home(request, categorySlug=None):
 
 def about_me(request):
     return render(request, 'about_us.html')
+
+def gallery(request):
+    return render(request, 'gallery.html')
