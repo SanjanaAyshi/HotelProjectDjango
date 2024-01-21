@@ -135,14 +135,13 @@
       Most popular choices for travelers from your location.
     </p>
     {% for cat in category %}
-    <div class="col-md-4 p-2">
+    <div class="col-md-4">
       <div class="card h-75">
         <div
           class="card-body rounded-3"
           style="height: 25rem; background-image: url('{{ cat.image.url }}'); background-size: cover;"
         >
           <h5 class="card-title text-white">{{ cat.name }}</h5>
-          <!-- You can add more information here if needed -->
           <a
             href="{% url 'categoryWisePost' cat.slug %}"
             class="btn btn-primary bg-transparent text-white"
@@ -309,7 +308,7 @@
 <!-- few cards -->
 <div class="container py-4">
   <h3 style="font-family: 'Lato', sans-serif; font-weight: bold">
-    Few Pictures of villas
+    Few Pictures of city's
   </h3>
   <p style="font-family: Arial, Helvetica, sans-serif">
     Most popular choices for travelers from your location.
