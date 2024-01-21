@@ -98,12 +98,14 @@
     </div>
   {% endfor %}
 </div> -->
+
+
 <div class="container">
   <div class="row pt-lg-3 p-3">
     <h3 style="font-family: 'Lato', sans-serif; font-weight: bold;">Trending destinations</h3>
     <p style="font-family: Arial, Helvetica, sans-serif;">Most popular choices for travelers from your location.</p>
     {% for cat in category %}
-      <div class="col-md-4 mb-lg-0">
+      <div class="col-md-4 p-2">
         <div class="card h-75">
           <div class="card-body rounded-3" style="height: 25rem; background-image: url('{{ cat.image.url }}'); background-size: cover;">
             <h5 class="card-title text-white">{{ cat.name }}</h5>
@@ -126,12 +128,12 @@
         <div class="col-md-12">
           <div class="card mb-3">
             <div class="row g-0">
-              <div class="col-md-3 p-0">
+              <div class="col-md-3">
                 <img src="{{post.image.url}}" style="width: 100%;" class="card-img-top" alt="...">
               </div>
-              <div class="col-md-9 pt-1">
+              <div class="col-md-9">
                 <div class="card-body">
-                  <h5 class="card-header pt-1">
+                  <h5 class="card-header">
                     <a href="{% url 'detail_post' post.id %}" class="text-decoration-none text-dark" style="font-weight: bold;">{{post.title}}</a>
                   </h5>
                   <h5 class="card-title" style="font-family: 'Lato', sans-serif;">Price: ${{post.price}}-Per night</h5>

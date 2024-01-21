@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="container">
-<h1 style="font-family:'Lato',sans-serif;">Profile Page:</h1>
+<h3 style="font-family:'Lato',sans-serif;">Welcome back,{{request.user.first_name}} {{request.user.last_name}}</h3>
 </div>
 <div class="container">
 {% if data %}
@@ -29,5 +29,7 @@
   <h4 style="color: rgb(0, 135, 135);">Sorry!! Nothing Booked...</h4>
   {% endif %}
 </div>
-
+<div class="container">
+  <a class="btn btn-info text-dark" href="{% url 'edit_profile' %}">Update Profile</a>
+</div>
 {% endblock %}
