@@ -41,18 +41,17 @@
   <body style="background-color: #ffffff">
     <nav
       class="container-fluid navbar navbar-expand-lg"
-      style="background-color: rgb(234, 245, 246)"
+      style="background-color: rgb(244, 248, 248)"
     >
-      <div class="container-fluid">
-        <a
-          class="navbar-brand fs-4"
-          style="
-            color: rgb(222, 48, 21);
-            font-weight: 500;
-            font-family: 'Playfair Display', sans-serif;
-          "
-          >HotelPlaza</a
-        >
+      <div class="container-fluid container">
+        <a class="navbar-brand" href="#">
+          <img
+            src="{% static 'The_invisibles-removebg-preview1.png' %}"
+            alt=""
+            width="150"
+            height="50"
+          />
+        </a>
         <button
           class="navbar-toggler"
           type="button"
@@ -68,7 +67,7 @@
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
               <a
-                class="nav-link active gap-2 fs-6"
+                class="nav-link active gap-1 fs-6"
                 style="font-family: 'Roboto', sans-serif"
                 aria-current="page"
                 href="{% url 'home' %}"
@@ -76,7 +75,7 @@
               >
             </li>
 
-            <li class="nav-item mx-3">
+            <li class="nav-item mx-2">
               <a
                 class="nav-link active fs-6"
                 style="font-family: 'Roboto', sans-serif"
@@ -84,7 +83,7 @@
                 >Gallery</a
               >
             </li>
-            <li class="nav-item mx-3">
+            <li class="nav-item mx-2">
               <a
                 class="nav-link active gap-lg-1 fs-6"
                 style="font-family: 'Roboto', sans-serif"
@@ -104,14 +103,14 @@
                   >Add Money</a
                 >
               </li>
-              <li class="nav-item mx-3">
+              <li class="nav-item mx-2">
                 <a
                   class="nav-link btn btn-warning text-dark"
                   href="{% url 'profile' %}"
                   >Profile</a
                 >
               </li>
-              <li class="nav-item mx-3">
+              <li class="nav-item mx-2">
                 <form action="{% url 'logout' %}" method="POST">
                   {% csrf_token %}
                   <button type="submit" class="btn btn-danger">Logout</button>
@@ -119,7 +118,7 @@
                 <!-- <a class="nav-link btn btn-danger text-dark" href="{% url 'logout' %}">Logout</a> -->
               </li>
               {% else %}
-              <li class="nav-item mx-3">
+              <li class="nav-item mx-2">
                 <a
                   class="nav-link btn btn-dark text-white"
                   href="{% url 'register' %}"
