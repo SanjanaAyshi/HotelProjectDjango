@@ -26,5 +26,6 @@ urlpatterns = [
     path('about_me', views.about_me, name='aboutMe'),
     path('post/', include('post.urls')),
     path('transaction/', include('transactions.urls')),
+    path('category/<slug:categorySlug>/', views.home, name='categoryWisePost'),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -76,11 +76,52 @@
   </div>
 </div>
 </div> -->
+
+<!-- adding category -->
+<!-- <div class="container">
+  {% for cat in category %}
+    <div class="card" style="width: 18rem;">
+      <img src="{{cat.image.url}}" class="card-img-top" alt="...">
+        <div class="form-check d-flex">
+        <label class="form-check-label" for="{{cat.id}}">
+          <a
+          href="{% url 'categoryWisePost' cat.slug %}"
+          class="text-decoration-none text-white"
+          >{{cat.name}}</a
+          >
+        </label>
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+    </div>
+  {% endfor %}
+</div> -->
+<div class="container">
+  <div class="row pt-lg-3 p-3">
+    <h3 style="font-family: 'Lato', sans-serif; font-weight: bold;">Trending destinations</h3>
+    <p style="font-family: Arial, Helvetica, sans-serif;">Most popular choices for travelers from your location.</p>
+    {% for cat in category %}
+      <div class="col-md-4 mb-lg-0">
+        <div class="card h-75">
+          <div class="card-body rounded-3" style="height: 25rem; background-image: url('{{ cat.image.url }}'); background-size: cover;">
+            <h5 class="card-title text-white">{{ cat.name }}</h5>
+            <!-- You can add more information here if needed -->
+            <a href="{% url 'categoryWisePost' cat.slug %}" class="btn btn-primary bg-transparent text-white">Explore {{ cat.name }}</a>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+
 <!-- Ui row style added -->
 <div class="container">
-  <div class="p-4 pt-2">
-    <h4 class="pt-3">All Hotel:</h4>
-    <div class="row pt-4">
+  <div class="p-2">
+    <h4 class="pt-0">All Hotel:</h4>
+    <div class="row pt-2">
       {% for post in data %}
         <div class="col-md-12">
           <div class="card mb-3">
