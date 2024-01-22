@@ -7,9 +7,9 @@
     </div>
     
     <div class="col-md-5 col-lg-5 p-3 align-content-center justify-content-center">
-        <h2 class="card-title">{{post.title}}</h2>
-        <h5 class="card-title">Price: ${{post.price}} Per night</h5>
-        <p class="card-text">{{post.content}}</p>
+        <h2 class="card-title" style="font-family: 'Noto Sans', sans-serif;">{{post.title}}</h2>
+        <h5 class="card-title">Price: ${{post.price}}-Per night</h5>
+        <p class="card-text" style="font-family: Arial, Helvetica, sans-serif">{{post.content}}</p>
         {% if request.user.is_authenticated %}
         <p>
             <a href="{% url 'Booked' post.id %}" class="btn btn-primary btn-lg">
@@ -19,24 +19,24 @@
       {% endif %}
     </div>
 </div>
-
-<div class="card m-2">
-    <h5 class="p-3">Total Comments : {{comments | length}}</h5>
-    {% for comment in comments %}
-    <div class="card-body border m-2">
-        <p><b>{{comment.name}}</b> {{comment.created_on}}</p>
-        <p>{{comment.body}}</p>
+<!-- comment section -->
+    <div class="card m-2">
+        <h5 class="p-3">Total Comments : {{comments | length}}</h5>
+        {% for comment in comments %}
+        <div class="card-body border m-2">
+            <p><b>{{comment.name}}</b> {{comment.created_on}}</p>
+            <p>{{comment.body}}</p>
+        </div>
+        {% endfor %}
     </div>
-    {% endfor %}
-</div>
-<div class="card m-2">
-    <div class="card-body">
-        <form method="post">
-            <h1>Add Comment</h1>
-            {% csrf_token %}
-            {{comment_form | crispy}}
+    <div class="card m-2">
+        <div class="card-body">
+            <form method="post">
+                <h1>Add Comment</h1>
+                {% csrf_token %}
+                {{comment_form | crispy}}
 
-            <button class="btn btn-warning">Submit</button>
+                <button class="btn btn-warning">Submit</button>
+        </div>
     </div>
-</div>
 {% endblock %}
