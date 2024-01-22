@@ -56,22 +56,61 @@ class UserBookAccountUpdateView(View):
             return redirect('profile')  # Redirect to the user's profile page
         return render(request, self.template_name, {'form': form})
 
+# @login_required
+# def ProfileData(request):
+#     print(request)
+#     if hasattr(request.user, 'account'):
+#         user_account = request.user.account
+
+#         if hasattr(user_account, 'user'):
+#             user = user_account.user
+
+#             data = BookedHotelModel.objects.filter(user=user, buy_status='PENDING')
+#             print(data)
+#             return render(request, 'profile.html', {'data': data})
+        
+#     return render(request, 'profile.html', {'data': None})
 @login_required
 def ProfileData(request):
     print(request)
+    data_pending = None
+    data_accepted = None
+
     if hasattr(request.user, 'account'):
         user_account = request.user.account
 
         if hasattr(user_account, 'user'):
             user = user_account.user
 
-            data = BookedHotelModel.objects.filter(user=user, buy=True)
-            print(data)
-            return render(request, 'profile.html', {'data': data})
+            data_pending = BookedHotelModel.objects.filter(user=user, buy_status='PENDING')
+            data_accepted = BookedHotelModel.objects.filter(user=user, buy_status='Accepted')
 
-    return render(request, 'profile.html', {'data': None})
+        
+    return render(request, 'profile.html', {'data_pending': data_pending, 'data_accepted': data_accepted})
 
 
+# class ReturnBookView(View):
+#     def get(self, request, id):
+#         book = get_object_or_404(Post, pk=id)
+#         user_account = request.user.account
+#         user = user_account.user
+        
+#         if user_account.balance >= book.price:
+#             # Deleting from the database
+#             purchases = BookedHotelModel.objects.filter(user=user, book=book)
+#             for purchase in purchases:
+#                 purchase.buy = False
+#                 purchase.save()
+#                 purchase.delete()
+
+#             user_account.balance += book.price
+#             user_account.save()
+
+#             messages.success(request, "Booking canceled successfully.")
+#             return redirect('profile')
+#         else:
+#             messages.success(request, "Booking canceled failed.")
+#             return redirect('home')
 class ReturnBookView(View):
     def get(self, request, id):
         book = get_object_or_404(Post, pk=id)
@@ -82,8 +121,6 @@ class ReturnBookView(View):
             # Deleting from the database
             purchases = BookedHotelModel.objects.filter(user=user, book=book)
             for purchase in purchases:
-                purchase.buy = False
-                purchase.save()
                 purchase.delete()
 
             user_account.balance += book.price

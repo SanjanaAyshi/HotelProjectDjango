@@ -1,35 +1,70 @@
-{% extends 'base.html' %}
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 <div class="container">
-<h3 style="font-family:'Lato',sans-serif;">Welcome back ! <br> {{request.user.first_name}} {{request.user.last_name}}</h3>
+  <h3 style="font-family: 'Lato', sans-serif">
+    Welcome back ! <br />
+    {{ request.user.first_name }} {{ request.user.last_name }}
+  </h3>
 </div>
 <div class="container">
-{% if data %}
+  {% if data_pending %}
   <table class="table">
     <thead>
       <tr>
         <th scope="col">Number</th>
         <th scope="col">Booking Name</th>
+        <th scope="col">Status</th>
         <th scope="col">Actions</th>
       </tr>
     </thead>
     <tbody>
-      {% for dt in data %}
+      {% for dt in data_pending %}
       <tr>
         <th scope="row">{{ dt.id }}</th>
         <td>{{ dt.book.title }}</td>
+        <td>{{ dt.buy_status }}</td>
         <td>
-          <a class="btn btn-danger text-white" href="{% url 'cancel_book' dt.book.id %}">Cancel</a>
+          <a
+            class="btn btn-danger text-white"
+            href="{% url 'cancel_book' dt.book.id %}"
+            >Cancel</a
+          >
         </td>
       </tr>
       {% endfor %}
     </tbody>
   </table>
-  {% else %}
-  <h4 style="color: rgb(0, 135, 135);">Sorry!! Nothing Booked...</h4>
+  {% endif %}
+  {% if data_accepted %}
+    <table class="table pt-5">
+      <thead>
+        <tr>
+          <th scope="col">Number</th>
+          <th scope="col">Booking Name</th>
+          <th scope="col">Status</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for dt in data_accepted %}
+        <tr>
+          <th scope="row">{{ dt.id }}</th>
+          <td>{{ dt.book.title }}</td>
+          <td>{{ dt.buy_status }}</td>
+          <td>
+            <a class="btn btn-success text-white" href="">Good to go</a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% endif %}
+  {% if not data_pending and not data_accepted %}
+  <h4 style="color: rgb(0, 135, 135)">Sorry!! Nothing Booked...</h4>
   {% endif %}
 </div>
 <div class="container">
-  <a class="btn btn-info text-dark" href="{% url 'edit_profile' %}">Update Profile</a>
+  <a class="btn btn-info text-dark" href="{% url 'edit_profile' %}"
+    >Update Profile</a
+  >
 </div>
 {% endblock %}

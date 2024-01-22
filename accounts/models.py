@@ -31,6 +31,10 @@ class UserAddress(models.Model):
         return str(self.user.email)
 
 
+BOOKING_STATUS=[
+    ('PENDING','Pending'),
+    ('Accepted', 'Accepted'),
+]
 
 class BookedHotelModel(models.Model):
 
@@ -39,7 +43,7 @@ class BookedHotelModel(models.Model):
     book = models.ForeignKey(
         Post, on_delete=models.CASCADE, null=True, blank=True)
 
-    buy = models.BooleanField(default=True, null=True, blank=True)
+    buy_status = models.CharField(choices=BOOKING_STATUS, max_length=10, default='PENDING')
 
     def __str__(self):
 
