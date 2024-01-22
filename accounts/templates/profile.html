@@ -33,38 +33,36 @@
       {% endfor %}
     </tbody>
   </table>
-  {% endif %}
-  {% if data_accepted %}
-    <table class="table pt-5">
-      <thead>
-        <tr>
-          <th scope="col">Number</th>
-          <th scope="col">Booking Name</th>
-          <th scope="col">Status</th>
-          <th scope="col">Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for dt in data_accepted %}
-        <tr>
-          <th scope="row">{{ dt.id }}</th>
-          <td>{{ dt.book.title }}</td>
-          <td>{{ dt.buy_status }}</td>
-          <td>
-            <a class="btn btn-success text-white" href="">Good to go</a>
-          </td>
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table>
-  {% endif %}
-  {% if not data_pending and not data_accepted %}
+  {% endif %} {% if data_accepted %}
+  <table class="table pt-5">
+    <thead>
+      <tr>
+        <th scope="col">Number</th>
+        <th scope="col">Booking Name</th>
+        <th scope="col">Status</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for dt in data_accepted %}
+      <tr>
+        <th scope="row">{{ dt.id }}</th>
+        <td>{{ dt.book.title }}</td>
+        <td>{{ dt.buy_status }}</td>
+        <td>
+          <a class="btn btn-success text-white" href="">Good to go</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% endif %} {% if not data_pending and not data_accepted %}
   <h4 style="color: rgb(0, 135, 135)">Sorry!! Nothing Booked...</h4>
   {% endif %}
 </div>
-<div class="container">
+<!-- <div class="container">
   <a class="btn btn-info text-dark" href="{% url 'edit_profile' %}"
     >Update Profile</a
   >
-</div>
+</div> -->
 {% endblock %}

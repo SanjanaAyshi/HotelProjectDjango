@@ -98,25 +98,98 @@
               <p class="fs-6 text-dark pt-2">
                 {{request.user.first_name}}:(balance:{{request.user.account.balance}})
               </p>
+              <li class="nav-item mx-2">
+                <div class="dropdown">
+                  <button
+                    class="btn btn-info dropdown-toggle"
+                    type="button"
+                    id="dropdownMenuButton1"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Profile
+                  </button>
+                  <ul
+                    class="dropdown-menu"
+                    aria-labelledby="dropdownMenuButton1"
+                  >
+                    <li>
+                      <a class="dropdown-item" href="{% url 'profile' %}"
+                        >Profile</a
+                      >
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="{% url 'edit_profile' %}"
+                        >Update Profile</a
+                      >
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="{% url 'pass_change' %}"
+                        >Change Password</a
+                      >
+                    </li>
+                    <li class="nav-item mx-2">
+                      <form action="{% url 'logout' %}" method="POST">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-danger">
+                          Logout
+                        </button>
+                      </form>
+                    </li>
+                  </ul>
+                </div>
+              </li>
               <li class="nav-item mx-3">
                 <a class="btn btn-success" href="{% url 'addMoney' %}"
                   >Add Money</a
                 >
               </li>
-              <li class="nav-item mx-2">
+              <!-- <li class="nav-item mx-2">
+                <div class="dropdown">
+                  <button
+                    class="btn btn-secondary dropdown-toggle"
+                    type="button"
+                    id="dropdownMenuButton1"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Dropdown button
+                  </button>
+                  <ul
+                    class="dropdown-menu"
+                    aria-labelledby="dropdownMenuButton1"
+                  >
+                    <li>
+                      <a class="dropdown-item" href="{% url 'profile' %}"
+                        >Profile</a
+                      >
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="{% url 'edit_profile' %}"
+                        >Update Profile</a
+                      >
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="{% url 'pass_change' %}"
+                        >Change Password</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </li> -->
+              <!-- <li class="nav-item mx-2">
                 <a
                   class="nav-link btn btn-warning text-dark"
                   href="{% url 'profile' %}"
                   >Profile</a
                 >
-              </li>
-              <li class="nav-item mx-2">
+              </li> -->
+              <!-- <li class="nav-item mx-2">
                 <form action="{% url 'logout' %}" method="POST">
                   {% csrf_token %}
                   <button type="submit" class="btn btn-danger">Logout</button>
                 </form>
-                <!-- <a class="nav-link btn btn-danger text-dark" href="{% url 'logout' %}">Logout</a> -->
-              </li>
+              </li> -->
               {% else %}
               <li class="nav-item mx-2">
                 <a
@@ -145,7 +218,7 @@
     </div>
 
     {% endfor %} {% block content %} {% endblock %}
-
+    <!-- footer section -->
     <footer
       class="bg-dark text-white pt-5 pb-4"
       style="margin-top: auto; font-family: 'Lato', sans-serif"
