@@ -14,6 +14,7 @@ from django.contrib import messages
 from . import forms
 from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib.auth import login , update_session_auth_hash
+from django.utils.decorators import method_decorator
 
 class UserRegistrationView(FormView):
     template_name = 'user_registration.html'
@@ -32,14 +33,29 @@ class UserLoginView(LoginView):
     template_name = 'user_login.html'
 
     def get_success_url(self):
+        messages.success(self.request, 'Successfully logged in')
         return reverse_lazy('home')
+
+from django.shortcuts import HttpResponseRedirect
 
 
 class UserLogoutView(LogoutView):
     def get_success_url(self):
         if self.request.user.is_authenticated:
+            messages.info(self.request, 'Successfully logged out')
             logout(self.request)
         return reverse_lazy('home')
+    
+    # def get(self, request, *args, **kwargs):
+    #     logout(self.request)
+    #     messages.info(request, 'Successfully logged out')
+    #     return HttpResponseRedirect(reverse_lazy('home'))
+    
+    #   def get(self, request, *args, **kwargs):
+    #     if self.request.user.is_authenticated:
+    #         messages.info(self.request, 'Successfully logged out')
+    #         logout(self.request)
+    #     return reverse_lazy('home')
 
 
 class UserBookAccountUpdateView(View):
@@ -55,21 +71,6 @@ class UserBookAccountUpdateView(View):
             form.save()
             return redirect('profile')  # Redirect to the user's profile page
         return render(request, self.template_name, {'form': form})
-
-# @login_required
-# def ProfileData(request):
-#     print(request)
-#     if hasattr(request.user, 'account'):
-#         user_account = request.user.account
-
-#         if hasattr(user_account, 'user'):
-#             user = user_account.user
-
-#             data = BookedHotelModel.objects.filter(user=user, buy_status='PENDING')
-#             print(data)
-#             return render(request, 'profile.html', {'data': data})
-        
-#     return render(request, 'profile.html', {'data': None})
 @login_required
 def ProfileData(request):
     print(request)
@@ -129,7 +130,7 @@ class ReturnBookView(View):
             messages.success(request, "Booking canceled successfully.")
             return redirect('profile')
         else:
-            messages.success(request, "Booking canceled failed.")
+            messages.warning(request, "Booking canceled failed.")
             return redirect('home')
 
 

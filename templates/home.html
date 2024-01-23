@@ -1,5 +1,13 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
 
+<style>
+  .dark-hover:hover {
+    z-index: 1;
+    transform: scale(1.1);
+    box-shadow: 0 25px 40px rgba(0, 0, 0, 0.5);
+    transition: 0.5s, ease-in-out;
+  }
+</style>
 <div class="d-flex flex-wrap px-5 pt-3 align-items-center">
   <div
     id="carouselExampleCaptions"
@@ -136,7 +144,7 @@
     </p>
     {% for cat in category %}
     <div class="col-md-4">
-      <div class="card h-75">
+      <div class="card h-75 dark-hover">
         <div
           class="card-body rounded-3"
           style="height: 25rem; background-image: url('{{ cat.image.url }}'); background-size: cover;"
@@ -153,61 +161,6 @@
     {% endfor %}
   </div>
 </div>
-
-<!-- Ui row style added -->
-<!-- <div class="container">
-  <div class="pt-lg-0">
-    <h3 style="font-family: 'Lato', sans-serif; font-weight: bold">
-      Popular Hotels
-    </h3>
-    <p style="font-family: Arial, Helvetica, sans-serif">
-      Book your hotel, the one you like
-    </p>
-    <div class="row pt-2">
-      {% for post in data %}
-      <div class="col-md-12">
-        <div class="card mb-3">
-          <div class="row g-0">
-            <div class="col-md-3">
-              <img
-                src="{{post.image.url}}"
-                style="width: 100%"
-                class="card-img-top"
-                alt="..."
-              />
-            </div>
-            <div class="col-md-9">
-              <div class="card-body">
-                <h5 class="card-header">
-                  <a
-                    href="{% url 'detail_post' post.id %}"
-                    class="text-decoration-none text-dark"
-                    style="font-weight: bold"
-                    >{{post.title}}</a
-                  >
-                </h5>
-                <h5 class="card-title" style="font-family: 'Lato', sans-serif">
-                  Price: ${{post.price}}-Per night
-                </h5>
-                <p class="card-text" style="font-family: 'Lato', sans-serif">
-                  {{post.content | truncatewords:40}}
-                </p>
-                {% if request.user.is_authenticated %}
-                <p>
-                  <a href="{% url 'Booked' post.id %}" class="btn btn-primary">
-                    Book Now
-                  </a>
-                </p>
-                {% endif %}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      {% endfor %}
-    </div>
-  </div>
-</div> -->
 
 <!-- ui update -->
 <div class="container">
@@ -303,20 +256,9 @@
           alt="..."
         />
       </div>
-      <div><img src="{% static 'ubar.jpg' %}" alt="..." /></div>
-      <div>
-        <img src="{% static 'Pathao.png' %}" loading="lazy" alt="..." />
-      </div>
       <div>
         <img
-          src="{% static 'Emirates_logo.svg.png' %}"
-          loading="lazy"
-          alt="..."
-        />
-      </div>
-      <div>
-        <img
-          src="{% static 'biman-bangladesh-airlines.jpg' %}"
+          src="{% static 'ame_air(1).png' %}"
           loading="lazy"
           alt="..."
         />
@@ -339,6 +281,13 @@
           alt="..."
         />
       </div>
+      <div>
+        <img
+          src="{% static 'ame_air(1).png' %}"
+          loading="lazy"
+          alt="..."
+        />
+      </div>
       <div><img src="{% static 'ubar.jpg' %}" alt="..." /></div>
       <div>
         <img src="{% static 'Pathao.png' %}" loading="lazy" alt="..." />
@@ -353,6 +302,13 @@
       <div>
         <img
           src="{% static 'biman-bangladesh-airlines.jpg' %}"
+          loading="lazy"
+          alt="..."
+        />
+      </div>
+      <div>
+        <img
+          src="{% static 'ame_air(1).png' %}"
           loading="lazy"
           alt="..."
         />
@@ -369,7 +325,7 @@
 </div>
 
 <!-- few cards -->
-<div class="container py-4">
+<!-- <div class="container py-4">
   <h3 style="font-family: 'Lato', sans-serif; font-weight: bold">
     Few Pictures of city's
   </h3>
@@ -428,7 +384,7 @@
       </div>
     </div>
     <div class="col-md-5 p-2">
-      <!-- sunny -->
+      
       <div class="card h-100">
         <div
           class="card-body rounded-3"
@@ -447,7 +403,7 @@
     </div>
     <div class="col-md-7 p-2">
       <div class="card w-100">
-        <!-- snow -->
+        
         <div
           class="card-body rounded-3"
           style="
@@ -463,7 +419,7 @@
         </div>
       </div>
       <div class="card w-100">
-        <!-- rain -->
+    
         <div
           class="card-body rounded-3"
           style="
@@ -480,5 +436,121 @@
       </div>
     </div>
   </div>
+</div> -->
+<!-- Add this CSS to your styles -->
+
+<!-- Your HTML with the dark-hover class added -->
+<div class="container py-4">
+  <h3 style="font-family: 'Lato', sans-serif; font-weight: bold">
+    Few Pictures of cities
+  </h3>
+  <p style="font-family: Arial, Helvetica, sans-serif">
+    Most popular choices for travelers from your location.
+  </p>
+  <div class="row">
+    <div class="col-md-7 p-2">
+      <div class="card w-100 dark-hover">
+        <div
+          class="card-body rounded-3"
+          style="
+            height: 10rem;
+            background-image: url('{% static 'salman-preeom-mO1_udD5iCs-unsplash.jpg' %}');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: flex-end;
+          "
+        >
+          <h5 class="card-title text-white">A city of light</h5>
+        </div>
+      </div>
+      <div class="card w-100 dark-hover">
+        <div
+          class="card-body rounded-3 imgBox"
+          style="
+            height: 10rem;
+            background-image: url('{% static 'pexels-cottonbro-studio-5111497.jpg' %}');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: flex-end;
+          "
+        >
+          <h5 class="card-title text-white">A city of wet and river</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-5 p-2">
+      <div class="card h-100 dark-hover">
+        <div
+          class="card-body rounded-3 imgBox"
+          style="
+            height: 20rem;
+            background-image: url('{% static 'the-anam-yz9a3Nr059I-unsplash.jpg' %}');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: flex-end;
+          "
+        >
+          <h5 class="card-title text-white mb-3 ms-3">A sweet night</h5>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-5 p-2">
+      <!-- sunny -->
+      <div class="card h-100 dark-hover">
+        <div
+          class="card-body rounded-3 imgBox"
+          style="
+            height: 20rem;
+            background-image: url('{% static 'pexels-adrien-olichon-4237154.jpg' %}');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: flex-end;
+          "
+        >
+          <h5 class="card-title text-white mb-3 ms-3">A city of sunny</h5>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-7 p-2">
+      <div class="card w-100 dark-hover">
+        <!-- snow -->
+        <div
+          class="card-body rounded-3 imgBox"
+          style="
+            height: 10rem;
+            background-image: url('{% static 'pexels-felix-mittermeier-957002.jpg' %}');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: flex-end;
+          "
+        >
+          <h5 class="card-title text-white">A city of snow</h5>
+        </div>
+      </div>
+      <div class="card w-100 dark-hover">
+        <!-- rain -->
+        <div
+          class="card-body rounded-3 imgBox"
+          style="
+            height: 10rem;
+            background-image: url('{% static 'pexels-yan-krukau-5479837.jpg' %}');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: flex-end;
+          "
+        >
+          <h5 class="card-title text-white">A city of rain</h5>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+
 {% endblock %}

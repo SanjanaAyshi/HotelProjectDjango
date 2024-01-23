@@ -39,6 +39,8 @@ def addMoney(request):
         user_account.balance += amount
         user_account.save()
 
+        messages.success(
+                request, "You requested money is added.")
         send_mail_to_user(request.user, "Successfully Added Money",
                           "addMoneyEmail.html", added_amount=amount)
         return redirect('home')
@@ -59,6 +61,8 @@ class BookingView(View):
                 user=request.user, book=book)
             
             purchase.save()
+            messages.success(
+                request, "You booking has been a successfully on hold.")
             # return render(request, 'home.html', {'data': book})
             send_mail_to_user(
                 request.user, "Booking Success", "bookedEmail.html")
