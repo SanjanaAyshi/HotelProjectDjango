@@ -44,7 +44,7 @@ The project is deployed and accessible at https://hotelplaza.onrender.com.
 
 ```bash
   git clone https://github.com/SanjanaAyshi/HotelProjectDjango
-  cd hotel-booking-website
+  cd HotelProjectDjango
   pip install -r requirements.txt
   python manage.py migrate
   python manage.py createsuperuser
