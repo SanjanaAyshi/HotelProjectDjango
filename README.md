@@ -16,7 +16,8 @@ This is a simple hotel booking website that allows users to register, login, vie
         - Hotel Detail Page
 
     2. Hotel Detail Page
-        -Detailed information about each hotel, including name, address, photos, and reviews, is displayed on dedicated pages.
+        -Detailed information about each hotel, including name, address, photos, and reviews, is 
+         displayed on dedicated pages.
 
     3. Hotel Booking and Confirmation
         -Users can book hotels using their deposited money.
@@ -44,7 +45,7 @@ The project is deployed and accessible at https://hotelplaza.onrender.com.
 
 ```bash
   git clone https://github.com/SanjanaAyshi/HotelProjectDjango
-  cd hotel-booking-website
+  cd HotelProjectDjango
   pip install -r requirements.txt
   python manage.py migrate
   python manage.py createsuperuser
