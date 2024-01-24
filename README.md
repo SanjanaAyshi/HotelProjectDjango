@@ -53,6 +53,19 @@ The project is deployed and accessible at https://hotelplaza.onrender.com.
 Access the website at http://localhost:8000.
 
 
+## Admin Power
+As an administrator, you wield significant control over the hotel booking platform, enabling you to effectively manage and enhance the user experience. Your responsibilities encompass the following key aspects:
+
+    1.Hotel Introduction Posts:
+     -Craft engaging posts to introduce new hotels on the platform.
+        -Showcase the unique features, amenities, and attractions of each hotel through compelling content.
+        -Provide users with valuable insights to facilitate informed booking decisions.
+    2.Booking Approval:
+     -Exercise authority in approving pending bookings to ensure a seamless and secure transaction process.
+     -Conduct a meticulous review of booking requests, guaranteeing the accuracy and reliability of the reservation system.
+     -Uphold the standard of excellence in the hotels associated with the platform.
+    3.Comprehensive Booking Tracking:
+    - Keeps a track hon the accepted hotel booking request.
 ## Contributing
 
 Contributions are always welcome!
